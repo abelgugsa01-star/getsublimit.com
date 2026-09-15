@@ -1,0 +1,46 @@
+# Your first report with SubLimit
+
+Practice with fictional records before using your own. Nothing in this sample establishes the facts of a real contract. Do not submit the sample reports.
+
+## 1. Open a practice workspace
+
+Extract the entire practice ZIP to a local folder. In SubLimit, choose Overview → Choose workspace and select a new, empty folder named SubLimit Practice. Keep it separate from your business records. There is no website login for this local workflow. Protected workspaces ask for their workspace password.
+
+## 2. Load the sample
+
+Choose Overview → Open configuration and select contract.json from the practice folder. Visit Contract setup: the sample is TREAS-DEMO-001 for August 2026. Its confirmations and evidence are fictional. Visit People & vendors to see the saved identities and Government receipts to see the $100,000 receipt. These facts have already been entered so you can learn the reporting workflow first.
+
+## 3. Import the spreadsheets
+
+Under Import & mapping, select payroll.xlsx for payroll/timekeeping and subcontractors.xlsx for subcontractors. Keep the mappings loaded from contract.json. Preview the first file to see how its headings match the saved mapping. Choose Import and calculate.
+
+## 4. Check the result
+
+Results should show COMPLIANT, counted subcontracting of $18,420.00 and 18.420000% against a 50% limit. The sample denominator is $100,000 in eligible government payments, not payroll cost. Double-click a contribution to inspect its source information. Review Exceptions even when the overall result is compliant.
+
+## 5. Practice correcting a missing fact
+
+Return to Contract setup. Clear the answer to “Does FAR 52.219-14 apply to this contract?” using the blank dropdown option. Calculate again. A supported compliance conclusion should now be blocked; inspect Exceptions for the missing confirmation. Restore the sample by opening the original contract.json again; discard the deliberately changed draft if asked. Select both practice spreadsheets again if needed and recalculate. The result returns to COMPLIANT. For a real contract, obtain the evidence before confirming a fact; do not copy the sample answer.
+
+## 6. Prepare the workforce draft
+
+With the successful sample report selected, open OCC workforce report → Import staffing file and select staffing.json. Review Contractor facts, Workers and hours, and Items needing attention. The sample has 10 worker lines totaling 851 hours. Export unsigned Word draft to a new local destination. Open it in a compatible document viewer and inspect every page, including continuation pages. Workforce hours and the officer’s certification are separate from the FAR payment calculation. Do not sign or submit this fictional draft.
+
+## 7. Keep and recover your work
+
+Use Results → Export package to save the reporting package. Reopen the report from History. Under Backup & restore, create a backup, keep its passphrase safely, and test Restore into a new folder. Check the recovered report in History before relying on that backup.
+
+## Quick checklist
+
+- [ ] Separate practice workspace selected
+- [ ] Sample contract and identities reviewed
+- [ ] Both spreadsheets selected with saved mappings
+- [ ] $18,420.00 and 18.420000% checked
+- [ ] Missing-fact exercise completed and sample restored
+- [ ] Workforce draft reviewed: 10 lines, 851 hours
+- [ ] Reporting package exported
+- [ ] Backup restored to a new folder
+
+The checklist records your progress, not compliance approval. In app builds with “First report checklist”, open it from Overview for shortcuts to each screen. Earlier builds can follow this printed checklist.
+
+Need help? Contact support@getsublimit.com. Describe the step using these fictional examples; do not send confidential workforce files or passwords.

@@ -1,0 +1,89 @@
+SubLimit — Your first report
+Narrated walkthrough with fictional practice records
+
+00:00 — Getting started
+Welcome to SubLimit. This walkthrough uses real application screens and fictional practice records. Pause whenever you want to follow along.
+
+00:10 — Open your practice contract
+Download and extract the practice files from the tutorial page. In a separate practice workspace, choose Open configuration and select contract dot JSON.
+
+00:21 — Review your contract
+Contract setup contains the reporting month, contract category, and program details. The sample is already filled in. Your own contract needs its own verified facts.
+
+00:33 — Confirm applicability
+Confirm whether the FAR clause applies, and record the supporting evidence. If you are unsure, leave the answer blank and seek clarification.
+
+00:43 — Review people and vendors
+Next, review People and vendors. Use stable identities and documented subcontractor status. A similar name does not establish identity or similarly situated status.
+
+00:55 — Check government receipts
+Government receipts supplies the payment basis. In this fictional example, eligible government payments total one hundred thousand dollars. Payroll cost is a separate measure.
+
+01:07 — Select the payroll workbook
+Open Import and mapping. Under payroll and timekeeping, choose Select CSV or XLSX files, and select payroll dot XLSX from the practice folder.
+
+01:20 — Review the saved mapping
+The sample includes saved column mappings. Check the worksheet name, header row, date format, and exact column headings before importing your own files.
+
+01:30 — Preview the source headings
+Choose Preview first file to see the original headings and rows. Check the worker identifiers, job numbers, dates, and hours against your mapping.
+
+01:40 — Select subcontractor payments
+Scroll down to Subcontractor payments and time. Select subcontractors dot XLSX in this section, and check its mapping too.
+
+01:49 — Import and calculate
+When both files and mappings are ready, choose Import and calculate. SubLimit processes the reporting files locally on your computer.
+
+01:59 — Read the counted amount
+The sample result counts eighteen thousand four hundred twenty dollars of subcontracting.
+
+02:05 — Read the payment basis
+The eligible government payment basis is one hundred thousand dollars.
+
+02:10 — Check the percentage
+Dividing the counted amount by that payment basis gives eighteen point four two percent. The sample is compliant against its configured fifty percent limit.
+
+02:21 — Trace a contribution
+To examine the evidence, double click a payment contribution. Here we open the first row.
+
+02:28 — Inspect the original source
+The detail shows the source worksheet, row number, field, and original value. Use this trace to reconcile a result with the spreadsheet that produced it.
+
+02:38 — Practice a missing fact
+Now let us try an incomplete fact. For this exercise only, leave the contract applicability answer blank, then import and calculate again.
+
+02:48 — Review required
+SubLimit now shows Review required and leaves the calculation unavailable. It does not guess that the clause applies.
+
+02:57 — Resolve the cause
+Open Exceptions to see what needs attention. Use Edit contract facts to correct the confirmed facts, then calculate again. Obtain evidence before changing an unknown answer.
+
+03:09 — Prepare the workforce draft
+The OCC workforce report is a separate workflow. Confirm that your contract requires this form revision. Its personnel and hours are separate from the FAR payment calculation.
+
+03:22 — Load practice staffing
+After restoring the sample confirmation and recalculating, choose Import staffing file and open staffing dot JSON from the practice folder.
+
+03:32 — Review the worker lines
+This example has ten worker lines, with all imported hours reconciled. Review the workers, hours, and contractor facts before preparing the draft.
+
+03:42 — Save and export the draft
+Save the staffing draft to keep it with workspace backups. Use Export unsigned Word draft to prepare the document. Inspect every page, including continuation pages.
+
+03:54 — Officer review is required
+Your authorized officer remains responsible for reviewing, certifying, and submitting the report. The application prepares the draft and does not sign on your behalf.
+
+04:05 — Export your reporting package
+Back in Results, Export package lets you save the reporting output. Store exported files securely, along with the evidence your organization needs.
+
+04:16 — Revisit reporting history
+History preserves earlier runs, including the incomplete example. Select a run and choose Open selected run to revisit it.
+
+04:25 — Protect and recover your work
+In Backup and restore, create a local backup and test restoring into a new folder. For business records, use a protected workspace and keep its passphrase safely.
+
+04:36 — Keep your records safe
+SubLimit cannot recover a forgotten password. Original input files and exported reports need their own protection. Keep practice files separate from business records.
+
+04:48 — Your first report: complete
+You have now seen how to import, check, trace, and preserve a reporting period. Use the written walkthrough and practice files on the tutorial page to try it yourself.

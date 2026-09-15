@@ -1,0 +1,53 @@
+SubLimit Customer Guide
+
+Install And Start
+
+Run SubLimit-0.6.0-Setup.exe from an extracted local folder. The installer is unsigned: Windows cannot verify our publisher identity. The portable alternative must be fully extracted with its _internal folder beside SubLimit.exe. Do not launch from inside a ZIP. No Python or Microsoft Word is needed to calculate or create a DOCX draft.
+
+Choose Local Storage
+
+Use Overview → Create protected workspace for a new password-protected local working folder. Choose workspace opens an existing folder. The initial legacy workspace is unencrypted. Under Backup & restore, migrate a legacy workspace to a new protected location. Migration retains the original plaintext files; it does not erase them. Keep the workspace passphrase safely: there is no password recovery service. Use Lock / unlock workspace when leaving or returning to the computer.
+
+Configure Your Contract
+
+Enter the contract identifier, reporting month, supported contract category and compliance period. Confirm FAR 52.219-14 applicability against the contract and provide evidence references. Unknown answers stay blank. Consult your contracting officer or compliance adviser when you cannot confirm applicability. Unsupported contract scenarios remain flagged.
+
+Enter People, Vendors And Payments
+
+Enter persistent employee/vendor IDs and exact source-system mappings. Supply verified subcontractor status and evidence; similar names do not establish identity or similarly situated status. Record government receipts and explicit allocations required for the supported payment-based calculation. Workforce hours are separate from FAR government-payment arithmetic.
+
+Import And Calculate
+
+Select payroll/timekeeping and subcontractor CSV/XLSX files. Map columns and save the mapping for reuse. Confirm that imports and payment coverage match the required period. Calculate and review Results, Exceptions and source details. Unknown records and incomplete evidence cannot become a supported conclusion through an automatic guess. Correct source files or explicit mappings and calculate again; retain historical runs.
+
+Prepare The Occ Workforce Draft
+
+Open the selected report, then OCC workforce report → New staffing. Under Contractor facts, confirm that your awarded contract requires the retained OCC revision dated August 6, 2026 and enter its evidence reference. This public solicitation attachment is not proof of your contract's requirements. A different revision requires separate validation.
+Add workers, their required facts, and explicit allocations under Source records and hours. No worker or allocation is preselected. Under Items needing attention, use Correct selected item to open the matching contractor or worker editor. Apply and Save staffing draft. Saved staffing is tied to the exact report and included in workspace backup.
+Export unsigned Word draft becomes available only when facts and hours reconcile and the layout fits the validated limits. Long values are flagged, never silently truncated. Review details remain exportable for incomplete drafts. Inspect every page of the final Word draft in your document viewer before official use. SubLimit neither signs nor submits. The officer's personnel-cost certification remains separate from FAR calculations.
+
+History And Corrections
+
+Select an earlier run under History to open its retained results. Save the original installer with records needing exact recalculation; replay requires its original build. New staffing for a changed report must be separately reviewed. A staffing draft saved for an externally opened report does not import that report's source archive: retain the external report package too.
+
+Backup And Restore
+
+Create encrypted backups under Backup & restore. Keep the backup passphrase separately and test restoration into a NEW location. Wrong passwords or damaged backups must fail without modifying your original workspace. Protected backups restore protected workspaces; legacy backups restore legacy workspaces. Keep original records until you have verified recovery.
+
+Updates And Recovery
+
+Close SubLimit before running an update. Back up first and retain the earlier installer. If installation is interrupted, rerun the same installer, then reopen your workspace and check History. Uninstalling removes application files, not your workspace or backups.
+
+Activation
+
+Open Overview → Activation to see your access status. If you have been provided an activation file, choose Import activation file. An activation request contains a random installation identifier, not workforce or contract records. Contact support@getsublimit.com if you need help with access or moving to another computer.
+
+When trial or subscription access expires, new calculations stop. History, verification, backup, restore and export remain available. Keep your activation file securely and use the correct date and time on your computer.
+
+Privacy And Retention
+
+The application has no telemetry or customer-data upload. External synchronization software may upload a folder you choose. Original spreadsheets, exports and Word drafts are unencrypted files even when the managed workspace is protected. The organization determines retention; SubLimit does not automatically purge records. Uninstall and migration do not delete source copies. Close the application before retiring an entire workspace through your approved device-management process. Ordinary deletion is not secure erasure. Do not send customer records, passwords or unredacted screenshots for routine support; use fictional examples.
+
+Troubleshooting
+
+If a file cannot be read, confirm its format and saved column mapping; close the spreadsheet editor and try a local copy. Use Exceptions to find the exact file, sheet and row needing correction. A blocked calculation or official draft requires the stated facts, not guessed defaults. If an export destination is occupied, select a new empty location. If a backup fails, keep the working workspace and check destination permissions and free space. Restore failures require the correct passphrase and an intact archive; the original remains available. After an update, reopen the same workspace and check History. Keep the prior installer for historical replay.
