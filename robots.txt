@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tutorial-media/
+
+Sitemap: https://getsublimit.com/sitemap.xml
