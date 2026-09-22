@@ -7,6 +7,20 @@
   var STORE = "profitpin_lead";
   function read() { try { return JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { return null; } }
   function write(v) { try { localStorage.setItem(STORE, JSON.stringify(v)); } catch (e) {} }
+  /* Page counter: one pixel to our own dashboard with the site, the path and where the visit came from.
+     No cookies, no identifiers; sessionStorage only marks the first page of this browsing session. */
+  (function count() {
+    try {
+      if (location.protocol === "file:" || /^(localhost|127\.)/.test(location.hostname)) return;
+      var first = "0";
+      try { if (!sessionStorage.getItem("pp_seen")) { sessionStorage.setItem("pp_seen", "1"); first = "1"; } } catch (e) { }
+      var q = "s=" + encodeURIComponent(location.hostname) + "&p=" + encodeURIComponent(location.pathname) +
+              "&f=" + first + "&r=" + encodeURIComponent(document.referrer || "") +
+              "&u=" + encodeURIComponent(new URLSearchParams(location.search).get("utm_source") || "") + "&t=" + Date.now();
+      new Image().src = "https://license.getsaleledger.com/growth/hit?" + q;
+    } catch (e) { }
+  })();
+
   var params = new URLSearchParams(location.search), fresh = {};
   KEYS.forEach(function (k) { var v = params.get(k); if (v) fresh[k] = v.slice(0, 120); });
   var lead = read();
