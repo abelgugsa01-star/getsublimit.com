@@ -1,3 +1,29 @@
+# SubLimit
+
+**Federal subcontracting-limit monitoring.** Windows software for small-business federal contractors monitoring subcontracting limits and preparing supported workforce report drafts.
+
+Import payroll, timekeeping, subcontractor and receipt records; track similarly situated status with evidence; and review source-linked calculations and exceptions. The contractor determines applicable requirements and reviews, certifies and submits reports.
+
+## Try SubLimit
+
+[Visit the official website and start a 30-day free trial](https://getsublimit.com/?utm_source=github&utm_medium=referral&utm_campaign=product_readme).
+
+No charge during the trial. The subscription is **$149/month after the trial**. Review the current offer and terms on the official website.
+
+## Guides and tools
+
+- [Free subcontracting-limit calculator](https://getsublimit.com/subcontracting-limit-calculator.html)
+- [Calculation workflow guide](https://getsublimit.com/limitations-on-subcontracting-calculation.html)
+- [Supported workforce report guide](https://getsublimit.com/occ-monthly-workforce-report.html)
+
+## Support
+
+Questions about fit or setup: [support@getsublimit.com](mailto:support@getsublimit.com). Built by [Profitpin LLC](https://profitpingroup.com/).
+
+---
+
+## Website maintenance
+
 # getsublimit.com
 
 Marketing and support site for SubLimit, served by GitHub Pages.
