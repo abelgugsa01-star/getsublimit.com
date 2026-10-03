@@ -38,7 +38,7 @@
 <main class="g" id="main">
   <p class="eyebrow">SUBLIMIT · FREE TOOL</p>
   <h1>Limitations on subcontracting calculator.</h1>
-  <p class="lede">Enter what the government has paid and what you have paid your subcontractors. The calculator applies the FAR 52.219-14 / 13 CFR 125.6 test for your contract type, excludes similarly situated subcontractors and materials where the rule allows, and shows exactly where you stand. Nothing is uploaded — it all runs in your browser.</p>
+  <p class="lede">Enter what the government has paid and what you have paid your subcontractors. The calculator applies the FAR 52.219-14 / 13 CFR 125.6 test for your contract type, excludes similarly situated subcontractors and materials where the rule allows, and shows an estimate based on the inputs you enter. Nothing is uploaded — it all runs in your browser.</p>
 
   <div class="calc" id="calc">
     <fieldset>
@@ -53,25 +53,33 @@
       <div class="row"><label for="paid">Amount paid by the government<small>Actually paid in the measurement period, not invoiced</small></label><input type="text" id="paid" inputmode="decimal" placeholder="0.00"></div>
     </fieldset>
     <fieldset>
-      <legend>Subcontractors</legend>
+      <legend>Subcontractor payments and materials</legend><p>For supply or construction work, split each payment into its non-material amount and a separate materials line. Include eligible materials paid by the prime and subcontractors once only. Materials are deducted from the government-payment base as well as excluded from counted subcontracting. Do not enter a gross subcontract payment and its materials again.</p>
       <div class="sub" id="subs"></div>
       <button type="button" class="add" id="addsub">+ Add subcontractor</button>
-      <p style="font-size:13px;opacity:.75;margin:10px 0 0">"Similarly situated" = holds the same small-business status the contract was set aside for and is small under the contract's NAICS code — verified, not assumed. Its <i>own</i> lower-tier subcontracting still counts: add that as a separate line marked "counts".</p>
+      <p style="font-size:13px;opacity:.75;margin:10px 0 0">"Similarly situated" = holds the same small-business status the contract was set aside for and is small under the NAICS code assigned to that subcontract — verified, not assumed. Its <i>own</i> lower-tier subcontracting still counts: add that as a separate line marked "counts".</p>
     </fieldset>
-    <div class="result" id="out" hidden></div>
-    <div class="actions"><button type="button" id="print">Print / save as PDF</button><button type="button" id="reset">Clear</button></div>
+    <div class="result" id="out" role="status" aria-live="polite" hidden></div>
+    <div class="actions"><button type="button" id="example">Load a fictional services example</button><button type="button" id="print">Print / save as PDF</button><button type="button" id="reset">Clear</button></div>
   </div>
 
   <div class="note caution">This tool is an arithmetic aid, not legal advice and not a compliance determination. The clause in your awarded contract, 13 CFR 125.6 as in force, and your contracting officer govern. Mixed contracts follow the principal-purpose rule. Verify every similarly situated status with evidence.</div>
 
   <h2>How the number is computed</h2>
-  <p><b>Counted subcontracting</b> = payments to subcontractors that are not similarly situated (minus materials, on supply and construction contracts). <b>Percentage</b> = counted subcontracting ÷ amount paid by the government. It is compared with the limit for the contract type: 50% services, 50% supplies, 85% general construction, 75% special trade construction. Read the full explanation, the records you need and the common mistakes in the <a href="/limitations-on-subcontracting-calculation.html">limitations on subcontracting guide</a>.</p>
+  <p><b>Counted subcontracting</b> = payments to subcontractors that are not similarly situated (minus materials, on supply and construction contracts). <b>Percentage</b> = counted subcontracting ÷ eligible government-payment base. For supply and construction contracts, subtract eligible materials costs from that base. Enter non-material subcontract payments and materials separately so nothing is counted twice. It is compared with the limit for the contract type: 50% services, 50% supplies, 85% general construction, 75% special trade construction. Read the full explanation, the records you need and the common mistakes in the <a href="/limitations-on-subcontracting-calculation.html">limitations on subcontracting guide</a>.</p>
 
+
+  <h2>Try an example before entering your own records</h2>
+  <p>For a fictional services contract, $100,000 in government payments and $40,000 in counted subcontracting gives 40%. An additional $10,000 paid to a verified similarly situated subcontractor is excluded in this example, assuming none of its work is further subcontracted. The 50% ceiling is $50,000, leaving $10,000 of arithmetic headroom.</p>
+  <p>The example button replaces the current inputs. Use Print / save as PDF first if you need to keep them.</p>
+  <h2>Keep the evidence behind the percentage</h2>
+  <ul><li>Government payment records for the applicable measurement period.</li><li>Subcontractor payments, separately identified materials and any lower-tier work.</li><li>Evidence for each similarly situated classification and the subcontract NAICS code.</li><li>The clause and measurement period specified in your award.</li></ul>
+  <p>This browser tool estimates a single scenario. For repeat reporting from your own records, <a href="/tutorial">see the SubLimit setup tutorial</a> or <a href="/start">start with the Windows application</a>.</p>
+  <p>Official reference: <a href="https://www.acquisition.gov/far/52.219-14">FAR 52.219-14, including the contract-type limits and similarly situated definition</a>. Nonmanufacturer, mixed-contract and other special cases need separate review; this calculator does not resolve them.</p>
   <div class="cta">
     <p class="eyebrow">EVERY PERIOD, FROM YOUR OWN RECORDS</p>
     <h2>SubLimit does this from your payroll and subcontractor exports — with every input traced to its row.</h2>
-    <p>Configure the contract once; each period import the files, verify statuses, get the exact percentage and a list of everything missing or unverified. Prepare the workforce report draft from the same records. Runs on your Windows computer. $149.00/month, first 30 days free.</p>
-    <a class="btn" href="/start">Get started ↗</a>
+    <p>Configure the contract once; each period import the files, verify statuses, get the exact percentage and a list of everything missing or unverified. Prepare the workforce report draft from the same records. Runs on your Windows computer. $149/month after a 30-day free trial. Card required for the subscription; no subscription charge during the trial. Cancel before the trial ends to avoid billing.</p>
+    <a class="btn" href="/start">Start your 30-day trial on Windows ↗</a>
   </div>
 </main>
 <script>
@@ -84,7 +92,7 @@ function tidy(inp){ var c=cents(inp.value); inp.value = c===0 && inp.value.trim(
   var LIM={services:[5000,false,'Services'],supplies:[5000,true,'Supplies'],general:[8500,true,'General construction'],special:[7500,true,'Special trade construction']};
   var subs=document.getElementById('subs'), out=document.getElementById('out');
   function row(){ var d=document.createElement('div'); d.className='row';
-    d.innerHTML='<input type="text" class="name" placeholder="Subcontractor name"><input type="text" class="amt" inputmode="decimal" placeholder="Paid 0.00"><select class="st"><option value="counts">Counts (not similarly situated)</option><option value="sim">Similarly situated (verified)</option><option value="mat">Materials (excluded on supply/construction)</option></select><button type="button" class="x" title="Remove">×</button>';
+    d.innerHTML='<input type="text" class="name" aria-label="Subcontractor or materials description" placeholder="Subcontractor or materials"><input type="text" class="amt" aria-label="Payment amount" inputmode="decimal" placeholder="Paid 0.00"><select class="st" aria-label="Payment classification"><option value="counts">Counts (not similarly situated)</option><option value="sim">Similarly situated (verified)</option><option value="mat">Materials (excluded on supply/construction)</option></select><button type="button" class="x" title="Remove" aria-label="Remove payment line">×</button>';
     d.querySelector('.x').onclick=function(){ d.remove(); calc(); }; d.querySelectorAll('input,select').forEach(function(i){ i.addEventListener('input',calc); i.addEventListener('change',calc); }); d.querySelector('.amt').addEventListener('blur',function(){tidy(this);calc();}); subs.appendChild(d); return d; }
   function calc(){
     var t=LIM[document.getElementById('ctype').value], limit=t[0], matEx=t[1], paid=cents(document.getElementById('paid').value);
@@ -96,17 +104,20 @@ function tidy(inp){ var c=cents(inp.value); inp.value = c===0 && inp.value.trim(
     if(!paid && !counted){ out.hidden=true; return; }
     out.hidden=false;
     if(!paid){ out.className='result warn'; out.innerHTML='<div class="big">—</div><p>Enter the amount paid by the government to compute the percentage. Counted subcontracting so far: <b>'+fmt(counted)+'</b>.</p>'; return; }
-    var bp=Math.round(counted*10000/paid); var pct=(bp/100).toFixed(2)+'%'; var over=bp>limit; var room=Math.floor(paid*limit/10000)-counted;
+    var base=paid-(matEx?mat:0);
+    if(paid<0 || counted<0 || sim<0 || mat<0 || base<=0 || Array.from(subs.querySelectorAll('.amt')).some(function(i){return cents(i.value)<0;})){out.className='result warn';out.textContent='Enter non-negative payments and a government-payment base greater than excluded materials. Review credits separately before using this estimate.';return;}
+    var bp=counted*10000/base; var pct=(bp/100).toFixed(2)+'%'; var over=counted*10000>base*limit; var room=Math.floor(base*limit/10000)-counted;
     out.className='result '+(over?'bad':(bp>limit*0.9?'warn':'ok'));
-    var h='<div class="big">'+pct+'</div><div>counted subcontracting vs. a <b>'+(limit/100)+'%</b> limit ('+t[2]+') — <b>'+(over?'OVER the limit':'under the limit')+'</b></div>';
+    var h='<div class="big">'+pct+'</div><div>counted subcontracting vs. a <b>'+(limit/100)+'%</b> limit ('+t[2]+') — <b>'+(over?'OVER the limit':(counted*10000===base*limit?'AT the limit':'under the limit'))+'</b></div>';
     h+='<div class="meter'+(over?' bad':'')+'"><i style="width:'+Math.min(100,bp/100)+'%"></i><b style="left:'+(limit/100)+'%"></b></div><div style="font-size:12px;opacity:.7">bar = your percentage · tick = the limit</div>';
     h+='<table><tr><td>Amount paid by the government</td><td>'+fmt(paid)+'</td></tr>';
     rows.forEach(function(r){ h+='<tr><td>'+r[0].replace(/</g,'&lt;')+'</td><td>'+fmt(r[1])+'</td></tr>'; });
     h+='<tr><td><b>Counted subcontract amount</b></td><td><b>'+fmt(counted)+'</b></td></tr>';
     if(sim) h+='<tr><td>Similarly situated (excluded)</td><td>'+fmt(sim)+'</td></tr>';
+    if(matEx) h+='<tr><td>Government-payment base after materials</td><td>'+fmt(base)+'</td></tr>';
     if(mat) h+='<tr><td>Materials (excluded)</td><td>'+fmt(mat)+'</td></tr>';
     h+='<tr><td>'+(room>=0?'Room left under the limit':'Amount over the limit')+'</td><td>'+fmt(Math.abs(room))+'</td></tr></table>';
-    h+='<ul>'+(over?'<li>Over the limit on these inputs. Check units and allocations first; if it holds, talk to your contracting officer before the period closes.</li>':'')+(bp>limit*0.9&&!over?'<li>Within 10% of the limit — small changes in payments or an unverified status could push you over.</li>':'')+'<li>Every similarly situated status here should have dated verification evidence on file.</li><li>Exact arithmetic: '+counted+'¢ ÷ '+paid+'¢ = '+(counted/paid*100).toFixed(4)+'% (shown rounded to 2 places).</li></ul>';
+    h+='<ul>'+(over?'<li>Over the limit on these inputs. Check units and allocations first; if it holds, talk to your contracting officer before the period closes.</li>':'')+(bp>limit*0.9&&!over?'<li>Within 10% of the limit — small changes in payments or an unverified status could push you over.</li>':'')+'<li>Every similarly situated status here should have dated verification evidence on file.</li><li>Calculation in cents: '+counted+'¢ ÷ '+base+'¢ = '+(counted/base*100).toFixed(4)+'% (shown rounded to 2 places).</li></ul>';
     out.innerHTML=h;
   }
   document.getElementById('ctype').addEventListener('change',calc);
@@ -114,6 +125,7 @@ function tidy(inp){ var c=cents(inp.value); inp.value = c===0 && inp.value.trim(
   document.getElementById('addsub').onclick=function(){ row().querySelector('.name').focus(); };
   document.getElementById('print').onclick=function(){ window.print(); };
   document.getElementById('reset').onclick=function(){ paid.value=''; subs.innerHTML=''; row(); row(); out.hidden=true; };
+  document.getElementById('example').onclick=function(){document.getElementById('ctype').value='services';paid.value='100000';subs.innerHTML='';var a=row(),b=row();a.querySelector('.name').value='Example subcontractor A';a.querySelector('.amt').value='40000';b.querySelector('.name').value='Example similarly situated B';b.querySelector('.amt').value='10000';b.querySelector('.st').value='sim';calc();};
   row(); row();
 })();
 </script>
